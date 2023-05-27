@@ -1,0 +1,81 @@
+https://javascript.info/
+https://www.w3schools.com/js/   
+https://www.w3schools.com/w3css/defaulT.asp
+https://www.w3schools.com/html/
+
+HTML ==> Good 
+    Basic of tag like heading , para , a list , table, forms
+CSS ==> Good
+    How design a page , color , background ,flex/grid/inline-block
+Javascript ==> Good
+    How run javascript code 
+    Basic of JS 
+        variables
+        if.. else
+        switch
+        array i.e []
+            push , splice , map , filter , find
+        object i.e {}
+            add data, delete , Object.keys , Object.values , Object.assign(), Object.entries()
+        functions
+        basic DOM (document object model)
+
+Introduction to React JS
+    React JS is library use for User Interaction (View) ==> 
+        # Front End Development 
+        # Mobile Development
+        # Desktop Development
+
+    (model => db ,  view UI,  controller => handling operations)
+
+    SpringBoot ==> Java ==> MVC (model view controller)
+    Laravel ==> PHP ==> MVC
+    Django => Py ==> MVC
+    .Net => C# ==> MVC
+    ExpressJS => Javascript (MVC)
+    Angular ==> Javascript (MVVM)
+
+
+Work with react ==> need Node JS
+    Run a js code without a browser ==> Node JS (V8 Engine)
+   
+    Development react application
+        ==> development server (only run node js)
+        ==> development server will server our code on browser
+
+    NMP ==> Node package manager
+        ==> packages (lib , framework , small code)
+        ==> set of commands ( install , uninstalling , updating )
+        ==> install ==> npm i redux , npm install redux
+        ==> uninstalling ==> npm un redux , npm uninstall redux
+        ==> update ==> npm update redux
+        ==> run a project ==> npm start
+        ==> test ==> npm run test
+        ==> build => npm run build
+
+    ==> React / Node JS 
+        ==> project configuration package.json
+        ==> npm init ==> package.json
+
+    ==> How to react application ?
+        # npx create-react-app app-name
+        # zero configuration , you can start 
+
+        # npx  vs npm
+        # npm ==> manage (install , uninstall , update)
+        # npx => node package executor
+        # npx ==> runtime ( install create-react-app, create our-project ,react create-react-app )
+
+# steps install react
+    # install node js
+    # create folder 
+    # open command prompt in that folder
+    # dont create a folder like node , npm ,node programming, npm programming
+    # npx create-react-app app-name
+---------------------------------------------
+    
+// Read bellow links
+https://medium.com/swlh/a-quick-introduction-to-jsx-ce57ce1b3343
+https://medium.com/the-andela-way/understanding-react-components-37f841c1f3bb
+https://medium.com/swlh/class-based-components-in-react-440eb8ed85a0
+https://medium.com/@itIsMadhavan/reactjs-props-vs-state-ff3a7680930d
