@@ -70,7 +70,7 @@ Work with react ==> need Node JS
     # install node js
     # create folder 
     # open command prompt in that folder
-    # dont create a folder like node , npm ,node programming, npm programming
+    # don't create a folder like node , npm ,node programming, npm programming
     # npx create-react-app app-name
 ---------------------------------------------
     
@@ -79,3 +79,48 @@ https://medium.com/swlh/a-quick-introduction-to-jsx-ce57ce1b3343
 https://medium.com/the-andela-way/understanding-react-components-37f841c1f3bb
 https://medium.com/swlh/class-based-components-in-react-440eb8ed85a0
 https://medium.com/@itIsMadhavan/reactjs-props-vs-state-ff3a7680930d
+
+Public
+    index.html
+    images
+Src
+    .js / .jsx
+    .css
+        image
+        fonts
+    .test.js
+package.json
+
+SRC
+    main entry ==> index.js
+    components ===> App.js
+        basic building block of react application
+        reusable in nature
+            class component (legacy project)
+            functional component (new project)
+
+component ==>start capital letter
+
+jsx ==> Javascript XML 
+    ==> jsx must have only one parent
+    ==> parent can be any html element or <></> (JSX fragment)
+
+    ==> external css ==> className="red remove-text"
+    ==> inline css  ==>style={{ key:value}}
+    ==> {} ==> write a js code (jsx expression)
+
+Event 
+    ==> user interaction
+    ==> onClick , onChange , onKeyPress , onKeyUp
+
+How to handel data inside component ?
+    # state are use to handel the data inside.
+    # when we update state component re-render
+    # functional component ==> don't state
+    # to work with functional state ==> hooks
+    # hook are predefine methods in react 
+    # hooks can perform a complex operations
+    # every hook start with "use"
+    # for state we have a hook called "useState()"
+    # hooks can only work in functional component
+    # in useState(value) ==> value can be :: number, string , boolean , [] , {}
