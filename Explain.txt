@@ -124,3 +124,47 @@ How to handel data inside component ?
     # for state we have a hook called "useState()"
     # hooks can only work in functional component
     # in useState(value) ==> value can be :: number, string , boolean , [] , {}
+
+# react life cycle methods
+
+# product-store
+    add data
+    product-view
+    delete-product
+    edit-product
+
+    3rd party product api
+
+npx create-react-app app-name
+npx => node package executor ==> download ==> run package ==> uninstall
+npm => node package manager
+        ==> install a package (single / multiple package) npm i <package_name>
+        ==> config project npm init -y
+        ==> uninstall a package (single / multiple package) npm un <package_name>
+        ==> update a package (single / multiple package) npm update <package_name>
+        ==> npm start
+        ==> npm run build
+        ==> npm run test
+
+// if you delete node_module folder install package
+    => npm i
+
+// cd <folder_name> 
+
+
+# typography
+# colors
+# buttons
+# list
+# gird
+# flex
+
+# change app class= to className=
+# change for= to htmlFor=
+# close all element like img, input with "/>"
+
+parent 
+    container-fluid
+
+        row
+            col-12
