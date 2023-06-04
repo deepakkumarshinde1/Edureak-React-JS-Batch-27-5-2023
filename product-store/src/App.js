@@ -1,8 +1,9 @@
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import AddProduct from "./components/AddProduct";
 import Header from "./components/Header";
 import ProductList from "./components/ProductList";
 import { useState } from "react";
+import PageNotFound from "./components/PageNotFound";
 
 const App = () => {
   // create navigate instance
@@ -60,6 +61,7 @@ const App = () => {
         <section className="row">
           <section className="col-12">
             <Routes>
+              <Route path="/" element={<Navigate to="/product-list" />} />
               <Route
                 path="/add-product"
                 element={
@@ -73,8 +75,14 @@ const App = () => {
 
               <Route
                 path="/product-list"
-                element={<ProductList productList={productList} />}
+                element={
+                  <ProductList
+                    productList={productList}
+                    setProductList={setProductList}
+                  />
+                }
               />
+              <Route path="*" element={<PageNotFound />} />
             </Routes>
           </section>
         </section>

@@ -181,3 +181,13 @@ parent
     # hooks methods
         useParams
         useNavigate ==> navigate my using javascript
+
+
+next week
+    redux
+    redux-saga
+    redux-toolkit
+    useSelector
+    useDispatch()
+
+    hooks ==> advance hooks in react

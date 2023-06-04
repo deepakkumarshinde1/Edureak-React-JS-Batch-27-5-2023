@@ -2,3 +2,13 @@
   width: 24% !important;
   border-radius: 0px !important;
 }
+
+.card-img-top {
+  height: 40vh !important;
+}
+
+.card-desc {
+  height: 150px;
+  /* border: 1px solid black; */
+  overflow: auto;
+}
