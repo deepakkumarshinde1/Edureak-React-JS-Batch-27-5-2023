@@ -168,3 +168,16 @@ parent
 
         row
             col-12
+
+# react-router-dom
+    # component
+        # Browser Router ==> add/enable routing to app
+        # Routes
+        # Route
+        # outlet
+        # Navigation
+        # Link
+        # NavLIst
+    # hooks methods
+        useParams
+        useNavigate ==> navigate my using javascript

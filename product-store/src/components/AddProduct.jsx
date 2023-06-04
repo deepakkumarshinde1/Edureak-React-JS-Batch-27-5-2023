@@ -1,50 +1,5 @@
-import { useState } from "react";
-
-const AddProduct = () => {
-  let [productList, setProductList] = useState([]);
-  let [newProduct, setNewProduct] = useState({
-    product_category: "",
-    product_name: "",
-    product_price: "",
-    product_desc: "",
-    product_rating: "",
-    product_rating_count: "",
-  });
-
-  const saveNewProduct = (event) => {
-    event.preventDefault(); // prevent default submitting
-    console.log(newProduct);
-
-    // save data in an array
-    //create new array from old array product list
-    let _newProductList = [...productList, { ...newProduct }];
-    // let _newProductList = [...productList];
-    // _newProductList.push({ ...newProduct });
-    console.log(_newProductList);
-    setProductList(_newProductList);
-    setNewProduct({
-      product_category: "",
-      product_name: "",
-      product_price: "",
-      product_desc: "",
-      product_rating: "",
-      product_rating_count: "",
-    });
-    alert("Product Added Successfully");
-  };
-
-  const inputChange = (event) => {
-    let value = event.target.value;
-    let name = event.target.name;
-
-    // create new object from old product
-    // in react to update a state of object or array we need to create a new array/object every time
-    // because object & array are store my memory reference in variable
-    let _newProduct = { ...newProduct };
-    _newProduct[name] = value; // _newProduct["product_name"] = "dell"
-    // update state
-    setNewProduct(_newProduct);
-  };
+const AddProduct = (props) => {
+  let { saveNewProduct, inputChange, newProduct } = props;
   return (
     <>
       <section className="row">
