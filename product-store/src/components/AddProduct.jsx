@@ -1,5 +1,29 @@
+import { useNavigate } from "react-router-dom";
+import {
+  insertNewProduct,
+  updateInputChange,
+} from "../redux/productReducerSlice";
+import { useDispatch, useSelector } from "react-redux";
 const AddProduct = (props) => {
-  let { saveNewProduct, inputChange, newProduct } = props;
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
+  // new Product states from redux
+  let { newProduct } = useSelector((state) => {
+    return state.products;
+  });
+
+  const inputChange = (event) => {
+    let value = event.target.value;
+    let name = event.target.name;
+    dispatch(updateInputChange({ value, name }));
+  };
+
+  const saveNewProduct = (event) => {
+    event.preventDefault();
+    dispatch(insertNewProduct());
+    alert("Product Added Successfully");
+    navigate("/product-list");
+  };
   return (
     <>
       <section className="row">
@@ -51,7 +75,7 @@ const AddProduct = (props) => {
                 <option value="Jewelry">Jewelry</option>
                 <option value="Electronics">Electronics</option>
               </select>
-              <label>Product Desc</label>
+              <label>Product Category</label>
             </div>
             <div className="form-floating mb-3">
               <input

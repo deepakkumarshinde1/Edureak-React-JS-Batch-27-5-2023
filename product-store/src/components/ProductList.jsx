@@ -1,37 +1,25 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { removeProduct } from "../redux/productReducerSlice";
 
 const ProductList = (props) => {
-  let { productList, setProductList } = props;
-  // loop logic ==> map
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
+  let { productList } = useSelector((state) => {
+    return state.products;
+  });
 
-  // fetch() communicate with the server
-  // fetch is a promise base api
-  // fetch js method
-
-  let getServerProductData = async () => {
-    let url = "http://localhost:3004/products";
-    let response = await fetch(url, { method: "GET" });
-    let serverProduct = await response.json();
-    setProductList([...productList, ...serverProduct]);
+  let deleteProduct = (index) => {
+    // removeProduct({id:index})
+    dispatch(removeProduct({ id: index }));
+    alert("Product remove successfully");
   };
-  // react life cycle methods ==> useEffect()
-  // on component load and only once ==> mounting
-
-  //  initialization => only once
-  //  loaded (mounting) => run only once ==> useEffect(  ()=>{} , [] )
-  // [] ==> dependency array (states)
-  //  update ==> run again and again ==> useEffect(  ()=>{} , [state,state] )
-  //  unload unmounting ==> run only once ==> useEffect(  ()=>{  return ()=>{} } , [] )
-  useEffect(() => {
-    getServerProductData();
-  }, []); // run only once
-
-  useEffect(() => {
-    return () => {
-      console.log("unmounted");
-    };
-  }, []); // run only once
+  // let getServerProductData = async () => {
+  //   let url = "http://localhost:3004/products";
+  //   let response = await fetch(url, { method: "GET" });
+  //   let serverProduct = await response.json();
+  //   setProductList([...productList, ...serverProduct]);
+  // };
 
   return (
     <>
@@ -50,7 +38,7 @@ const ProductList = (props) => {
               return (
                 <div className="card width-30" key={index}>
                   <img
-                    src={product.image}
+                    src="/images/img.png"
                     className="card-img-top p-2"
                     alt="..."
                   />
@@ -67,22 +55,28 @@ const ProductList = (props) => {
                           className="fa fa-star text-warning me-1"
                           aria-hidden="true"
                         ></i>
-                        {product.rating.product_rating}
+                        {product.product_rating}
                         <i
                           className="fa fa-users text-primary ms-3 me-1"
                           aria-hidden="true"
                         ></i>
-                        {product.rating.product_rating_count}
+                        {product.product_rating_count}
                       </span>
                     </div>
                     <div className="d-flex justify-content-between">
-                      <button className="btn btn-primary btn-sm">
+                      <button
+                        className="btn btn-primary btn-sm"
+                        onClick={() => navigate("/edit-product/" + index)}
+                      >
                         <i
                           className="fa fa-pencil-square-o"
                           aria-hidden="true"
                         ></i>
                       </button>
-                      <button className="btn btn-danger btn-sm">
+                      <button
+                        className="btn btn-danger btn-sm"
+                        onClick={() => deleteProduct(index)}
+                      >
                         <i className="fa fa-trash" aria-hidden="true"></i>
                       </button>
                     </div>
