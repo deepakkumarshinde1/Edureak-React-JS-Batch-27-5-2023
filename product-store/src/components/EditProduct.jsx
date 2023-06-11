@@ -1,7 +1,10 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import {
   insertNewProduct,
-  updateInputChange,
+  makeUpdateProduct,
+  setEditProduct,
+  updateEditInputChange,
+  updateeditInputChange,
 } from "../redux/productReducerSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -15,17 +18,19 @@ const EditProduct = (props) => {
     return state.products;
   });
 
-  const inputChange = (event) => {
+  const editInputChange = (event) => {
     let value = event.target.value;
     let name = event.target.name;
-    dispatch(updateInputChange({ value, name }));
+    dispatch(updateEditInputChange({ value, name }));
   };
 
-  useEffect(() => {});
+  useEffect(() => {
+    dispatch(setEditProduct({ id }));
+  }, []); // only once i.e onload
 
-  const saveNewProduct = (event) => {
+  const updateProduct = (event) => {
     event.preventDefault();
-    dispatch(insertNewProduct());
+    dispatch(makeUpdateProduct({ id }));
     alert("Product Added Successfully");
     navigate("/product-list");
   };
@@ -34,15 +39,15 @@ const EditProduct = (props) => {
       <section className="row">
         <section className="col-lg-4 col-10 m-auto card p-3 mt-2">
           <p className="h3 text-center text-primary">Edit Product</p>
-          <form onSubmit={saveNewProduct}>
+          <form onSubmit={updateProduct}>
             <div className="form-floating mb-3">
               <input
                 type="text"
                 className="form-control"
                 placeholder="Name"
                 name="product_name"
-                value={newProduct.product_name}
-                onChange={inputChange}
+                value={editProduct.product_name}
+                onChange={editInputChange}
               />
               <label>Product Name</label>
             </div>
@@ -52,8 +57,8 @@ const EditProduct = (props) => {
                 className="form-control"
                 placeholder="Price"
                 name="product_price"
-                onChange={inputChange}
-                value={newProduct.product_price}
+                onChange={editInputChange}
+                value={editProduct.product_price}
               />
               <label>Product Price</label>
             </div>
@@ -63,8 +68,8 @@ const EditProduct = (props) => {
                 rows={10}
                 placeholder="Desc"
                 name="product_desc"
-                onChange={inputChange}
-                value={newProduct.product_desc}
+                onChange={editInputChange}
+                value={editProduct.product_desc}
               ></textarea>
               <label>Product Desc</label>
             </div>
@@ -72,8 +77,8 @@ const EditProduct = (props) => {
               <select
                 className="form-select"
                 name="product_category"
-                onChange={inputChange}
-                value={newProduct.product_category}
+                onChange={editInputChange}
+                value={editProduct.product_category}
               >
                 <option value="">Select</option>
                 <option value="Men's Clothing">Men's Clothing</option>
@@ -88,8 +93,8 @@ const EditProduct = (props) => {
                 className="form-control"
                 placeholder="rate"
                 name="product_rating"
-                value={newProduct.product_rating}
-                onChange={inputChange}
+                value={editProduct.product_rating}
+                onChange={editInputChange}
               />
               <label>Product Rating</label>
             </div>
@@ -99,18 +104,18 @@ const EditProduct = (props) => {
                 placeholder="rate count"
                 className="form-control"
                 name="product_rating_count"
-                onChange={inputChange}
-                value={newProduct.product_rating_count}
+                onChange={editInputChange}
+                value={editProduct.product_rating_count}
               />
               <label>Product Rating Count</label>
             </div>
             <div className="text-center">
               <button className="btn btn-success mx-2" type="submit">
-                Save
+                Update
               </button>
-              <button className="btn btn-danger" type="reset">
-                Reset
-              </button>
+              <Link className="btn btn-danger" to="/product-list">
+                Cancel
+              </Link>
             </div>
           </form>
         </section>
