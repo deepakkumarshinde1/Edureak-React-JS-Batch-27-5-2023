@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { removeProduct } from "../redux/productReducerSlice";
+import { removeProduct, updateProductList } from "../redux/productReducerSlice";
+import { useEffect } from "react";
+import { fetchProductList } from "../service/ProductAPIService";
 
 const ProductList = (props) => {
   let dispatch = useDispatch();
@@ -14,12 +16,16 @@ const ProductList = (props) => {
     dispatch(removeProduct({ id: index }));
     alert("Product remove successfully");
   };
-  // let getServerProductData = async () => {
-  //   let url = "http://localhost:3004/products";
-  //   let response = await fetch(url, { method: "GET" });
-  //   let serverProduct = await response.json();
-  //   setProductList([...productList, ...serverProduct]);
-  // };
+  let getServerProductData = async () => {
+    let data = fetchProductList();
+    if (data !== null) {
+      dispatch(updateProductList({ list: data }));
+    }
+  };
+
+  useEffect(() => {
+    getServerProductData();
+  }, []);
 
   return (
     <>
@@ -38,7 +44,7 @@ const ProductList = (props) => {
               return (
                 <div className="card width-30" key={index}>
                   <img
-                    src="/images/img.png"
+                    src={product.image}
                     className="card-img-top p-2"
                     alt="..."
                   />
