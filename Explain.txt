@@ -191,3 +191,18 @@ next week
     useDispatch()
 
     hooks ==> advance hooks in react
+
+# saga works with generator function 
+# generator function are available  in javascript
+# with the gen function we pause and resume the function flow
+
+# saga methods
+    call ==> run a api
+    put ==> like dispatch , its call the action of redux
+    takeEvery ==> when we calls same api multiple time , its will run all request
+    takeLatest ==>  when we calls same api multiple time , its will only run recent request and cancel older one
+    all ==> run different api same time 
+
+    /get-data
+    /get-data
+    /get-data

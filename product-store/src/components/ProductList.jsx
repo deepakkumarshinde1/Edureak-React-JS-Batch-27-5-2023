@@ -1,8 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { removeProduct, updateProductList } from "../redux/productReducerSlice";
+import {
+  getServerProductList,
+  getSingleProduct,
+  removeProduct,
+} from "../redux/productReducerSlice";
 import { useEffect } from "react";
-import { fetchProductList } from "../service/ProductAPIService";
 
 const ProductList = (props) => {
   let dispatch = useDispatch();
@@ -16,19 +19,15 @@ const ProductList = (props) => {
     dispatch(removeProduct({ id: index }));
     alert("Product remove successfully");
   };
-  let getServerProductData = async () => {
-    let data = fetchProductList();
-    if (data !== null) {
-      dispatch(updateProductList({ list: data }));
-    }
-  };
 
   useEffect(() => {
-    getServerProductData();
+    console.log("use effect called");
+    dispatch(getServerProductList());
   }, []);
 
   return (
     <>
+      <button onClick={() => dispatch(getSingleProduct(20))}>GetData</button>
       <section className="row">
         <section className="col-12">
           <p className="text-center h3 text-primary">Product List</p>

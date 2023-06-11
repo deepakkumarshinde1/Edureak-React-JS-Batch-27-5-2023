@@ -60,6 +60,11 @@ let ProductReducerSlice = createSlice({
       let { list } = action.payload;
       state.productList = [...state.productList, ...list];
     },
+    getServerProductList: () => {},
+    getSingleProduct: () => {},
+    setSingleProduct: (state, action) => {
+      console.log(action.payload);
+    },
   },
 });
 
@@ -72,4 +77,7 @@ export const {
   updateEditInputChange,
   makeUpdateProduct,
   updateProductList,
+  getServerProductList,
+  getSingleProduct,
+  setSingleProduct,
 } = ProductReducerSlice.actions;
