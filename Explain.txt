@@ -208,3 +208,27 @@ https://redux-toolkit.js.org/
     /get-data
     /get-data
     /get-data
+
+
+******************************** hooks ****************************************************************
+
+useState,
+  useEffect ==> react lifecycle,
+  useRef ==> work with real dom logic,
+  useContext ==> make global state logic,
+  useReducer ==> to avoid mult states
+  useMemo ==> cache complex data / improve performance in return value,
+  useImperativeHandle ==> send data data/function child to parent
+  useCallback ==> cache complex data / improve performance in return function,
+  memo ==> hoc to make a component as pure function,
+  forwardRef ==> hoc to enable a ref in custom component,
+
+context == data
+  useContext API
+    useContext ==> a main hook (other components to call data) :: share a common state data with other components
+    createContext ==> create a context
+    ContextProvider ==> react component which will wrap other components
+    customHook ==> its a hook which we will create
+
+https://medium.com/fullstack-programming-in-english/advanced-react-hooks-everything-about-the-useref-4a2cd7c80790
+https://medium.com/in-the-weeds/an-intro-to-advanced-react-hooks-a8af6397fe28

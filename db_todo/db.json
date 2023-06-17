@@ -1,0 +1,16 @@
+{
+  "todos": [
+    {
+      "title": "Task-1",
+      "isCompleted": false
+    },
+    {
+      "title": "Task-2",
+      "isCompleted": true
+    },
+    {
+      "title": "Task-3",
+      "isCompleted": false
+    }
+  ]
+}
