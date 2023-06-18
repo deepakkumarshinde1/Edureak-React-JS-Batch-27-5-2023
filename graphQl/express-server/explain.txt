@@ -1,0 +1,46 @@
+REST API 
+    Server 
+        https://fakestoreapi.com/products/1
+        https://fakestoreapi.com/products
+        https://fakestoreapi.com/products-title-price
+        https://fakestoreapi.com/products-rating
+        https://fakestoreapi.com/products-title-price/2
+        https://fakestoreapi.com/products-rating/1
+
+        POST / DELETE / PUT / GET
+
+GraphQL
+Huge Amount 
+    Client request 
+        https://fakestoreapi.com/graphql?query=
+
+GraphQL 
+    Query ==> read data
+    Mutation ==> add , update , delete
+
+Apolo Server (Express js) (4444)
+    Build Server
+        node js
+            express js (framework for server)
+                graphQL
+                    schema (structure)
+                        Query
+                        Mutation
+    express 4.17.0
+    graphql 14.3.0
+    express-graphql 0.8.0
+    cors (enable communication in between different port/ ip address)
+    nodemon (restart on change)
+
+    npm init -y ==> create a package.json
+
+
+Apolo Client (React Js) (3000)
+        @apollo/client
+        Connect ==> Sever
+        graphQl
+            Apollo Provider
+                component
+                    mounting 
+                        query
+
