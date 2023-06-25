@@ -1,0 +1,9 @@
+create native :: npx create-expo-app app-name 
+
+to application in mobile phone
+    download expo client app ===> play store 
+
+
+
+Native React We components
+    View ==> Div
