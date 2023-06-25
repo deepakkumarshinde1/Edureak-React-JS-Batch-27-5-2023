@@ -6,24 +6,25 @@ const GlobalTodoContext = createContext({});
 // create a provider (component)
 export const TodoContextProvider = (props) => {
   let [todoList, setTodoList] = useState([]);
+  let [input, setInput] = useState("");
 
   // useRef give a way to connect with real dom logic
   // useRef collect data child to parent
 
-  let inputRef = useRef();
+  // let inputRef = useRef();
 
   // save todo
   const saveTodo = (event) => {
     // prevent default submission
     event.preventDefault();
-    let inputValue = inputRef.current.value;
+    // let inputValue = inputRef.current.value;
     // check if input value is not empty
-    if (inputValue !== "") {
-      let newTodo = { title: inputValue, isCompleted: false };
+    if (input !== "") {
+      let newTodo = { title: input, isCompleted: false };
       setTodoList([newTodo, ...todoList]);
 
       // reset input value
-      inputRef.current.value = "";
+      setInput("");
     }
   };
 
@@ -37,7 +38,8 @@ export const TodoContextProvider = (props) => {
 
   let store = {
     todoList,
-    inputRef,
+    input,
+    setInput,
     saveTodo,
     updateTodoStatus,
   };

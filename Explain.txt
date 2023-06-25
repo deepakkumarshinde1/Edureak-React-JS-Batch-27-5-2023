@@ -232,3 +232,18 @@ context == data
 
 https://medium.com/fullstack-programming-in-english/advanced-react-hooks-everything-about-the-useref-4a2cd7c80790
 https://medium.com/in-the-weeds/an-intro-to-advanced-react-hooks-a8af6397fe28
+
+
+
+Why we need testing ?
+    We can check and fix bug.
+    We can improve performance and productivity of app
+    We will be 100% sure about our application
+    Gives as assurance whether we have cover all use-case 
+
+    Manual
+        Unit Testing ==> We Small Parts => check text of h1 element
+        Functional Testing ==> Functionality => onclick want to change the text of h1 element
+        Integration Testing ==> Collection More then 1 component/module => c1 (button) click make a change in c2 
+
+

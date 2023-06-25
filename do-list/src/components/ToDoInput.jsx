@@ -2,22 +2,27 @@ import { memo } from "react";
 import { useTodoContext } from "../context/ToDoContext";
 
 const ToDoInput = () => {
-  console.log("toDoInput");
-  let { inputRef, saveTodo } = useTodoContext();
+  let { input, setInput, saveTodo } = useTodoContext();
   return (
     <>
-      <form onSubmit={saveTodo}>
+      <form>
         <div className="input-group mb-3">
           <input
-            ref={inputRef}
             type="text"
             className="form-control"
             placeholder="Add a todo item"
-            onChange={() => {}}
+            value={input}
+            onChange={(event) => {
+              setInput(event.target.value);
+            }}
           />
           <button
             className="input-group-text btn btn-outline-success"
             id="basic-addon1"
+            style={{ opacity: 1 }}
+            type="submit"
+            onClick={saveTodo}
+            data-testid="submit-button"
           >
             Save Todo
           </button>

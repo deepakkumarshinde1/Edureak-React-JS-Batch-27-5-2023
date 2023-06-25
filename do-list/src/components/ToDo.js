@@ -5,7 +5,7 @@ import ToDoHeader from "./ToDoHeader";
 const ToDo = () => {
   return (
     <>
-      <ToDoHeader />
+      <ToDoHeader text="Todo List Application"/>
       <ToDoInput />
       <ToDoList />
     </>
